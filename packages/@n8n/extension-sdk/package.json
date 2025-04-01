@@ -22,10 +22,10 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "tsup --watch",
+    "dev": "node init && tsup --watch",
     "typecheck:frontend": "vue-tsc --noEmit --project tsconfig.frontend.json",
     "typecheck:backend": "tsc --noEmit --project tsconfig.backend.json",
-    "build": "pnpm \"/^typecheck:.+/\" && pnpm clean && tsup",
+    "build": "node init && pnpm \"/^typecheck:.+/\" && pnpm clean && tsup",
     "preview": "vite preview"
   },
   "peerDependencies": {
